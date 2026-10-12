@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Digital Twin — BMS SOC Monitor</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Digital Twin — BMS SOC Monitor</h1>
+  <div id="link-status" class="status offline">TCP: en attente...</div>
+</header>
+
+<main>
+  <section class="gauge-panel">
+    <div id="gauge" class="gauge">
+      <span id="gauge-value">--%</span>
+    </div>
+    <div class="gauge-label">SOC Fusion (Digital Twin)</div>
+  </section>
+
+  <section class="chart-panel">
+    <h2>SOC EKF vs XGBoost vs Fusion</h2>
+    <canvas id="socChart"></canvas>
+  </section>
+
+  <section class="metrics-panel">
+    <h2>Métriques live</h2>
+    <div class="metric-row"><span>Échantillon</span><span id="m-sample">0</span></div>
+    <div class="metric-row"><span>SOC EKF</span><span id="m-ekf">--%</span></div>
+    <div class="metric-row"><span>SOC XGBoost</span><span id="m-xgb">--%</span></div>
+    <div class="metric-row"><span>SOC Fusion</span><span id="m-final">--%</span></div>
+    <hr>
+    <div class="metric-row final-row"><span>RMSE EKF (final)</span><span id="m-rmse-ekf">--</span></div>
+    <div class="metric-row final-row"><span>RMSE XGBoost (final)</span><span id="m-rmse-xgb">--</span></div>
+    <div class="metric-row final-row"><span>RMSE Fusion (final)</span><span id="m-rmse-final">--</span></div>
+  </section>
+</main>
+
+<script src="/static/main.js"></script>
+</body>
+</html>

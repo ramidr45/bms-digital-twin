@@ -1,0 +1,5 @@
+Methode,RMSE (%),MAE (%)
+EKF,0.86,0.70
+XGBoost,1.74,1.38
+LSTM,2.34,1.78
+BiLSTM,3.82,2.95

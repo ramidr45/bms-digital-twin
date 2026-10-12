@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0e17;
+  color: #e6f1ff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #0d1420;
+  border-bottom: 1px solid #1c2735;
+}
+
+header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4fd1ff;
+  letter-spacing: 0.5px;
+}
+
+.status {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.status.online {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid #4ade80;
+}
+
+.status.offline {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+  border: 1px solid #94a3b8;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 320px 1fr 300px;
+  gap: 20px;
+  padding: 20px;
+  height: calc(100vh - 64px);
+}
+
+section {
+  background: #0d1420;
+  border: 1px solid #1c2735;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.gauge-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge {
+  width: 200px;
+  height: 340px;
+  background: #12b76a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease, height 0.4s ease;
+  border: 1px solid #1c2735;
+}
+
+#gauge-value {
+  font-size: 42px;
+  font-weight: 700;
+  color: #06120a;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.gauge-label {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.chart-panel h2,
+.metrics-panel h2 {
+  font-size: 14px;
+  color: #4fd1ff;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chart-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-panel canvas {
+  flex: 1;
+}
+
+.metrics-panel {
+  overflow-y: auto;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #1c2735;
+  font-size: 14px;
+}
+
+.metric-row span:first-child {
+  color: #94a3b8;
+}
+
+.metric-row span:last-child {
+  color: #e6f1ff;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-row.final-row span:last-child {
+  color: #4ade80;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #1c2735;
+  margin: 8px 0;
+}

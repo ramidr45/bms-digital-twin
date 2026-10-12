@@ -1,0 +1,21 @@
+# --- Raspberry Pi : environnement Python (se recrée sur le Pi) ---
+venv/
+__pycache__/
+*.pyc
+
+# --- MATLAB / Simulink : fichiers temporaires régénérés ---
+slprj/
+*.slxc
+*.obj
+*.asv
+*.autosave
+*.slx.autosave
+
+# --- Données trop lourdes pour GitHub (> 100 Mo) ---
+dataset.zip
+00_dataset_Panasonic_18650PF/*.zip
+00_dataset_Panasonic_18650PF/*.mat
+
+# --- Windows ---
+Thumbs.db
+desktop.ini
